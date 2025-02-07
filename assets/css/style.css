@@ -1,0 +1,7 @@
+#bg-custom {
+    background: rgb(237,56,96);
+background: radial-gradient(circle, rgba(237,56,96,1) 7%, rgba(63,94,251,1) 24%, rgba(252,70,107,1) 86%);
+}
+.nave-brand, .nave-link{
+    color: azure;
+}
