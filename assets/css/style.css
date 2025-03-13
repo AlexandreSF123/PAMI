@@ -5,9 +5,9 @@ background: radial-gradient(circle, rgba(237,56,96,1) 7%, rgba(63,94,251,1) 24%,
 .nave-brand, .nave-link{
     color: azure;
 }
-* {
-    outline: 1px solid red;
-}
 :root {
     --primary-color: #55DB02
+}
+/* * {
+    outline: 1px solid red;
 }

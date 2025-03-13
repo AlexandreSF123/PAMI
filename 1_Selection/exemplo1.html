@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="aplicarEstilo()">Aplicar Estilo</button>
+    <button onclick="dizerOla()">Diga Olá!</button>
+    <button onclick="aumentarFonte()">Aumentar Fonte</button>
+    <button onclick="reduzirFonte()">Reduzir Fonte</button>
+    <button onclick="aplicarRoxo()">Aplicar com purple</button>
+    <button onclick="aplicarRed()">Aplicar com red</button>
+    <button onclick="aplicarAzul()">Aplicar com blue</button>
+    <button onclick="aumentarMargem()">Aumentar Margens</button>
+    <button onclick="reduzirMargem()">Reduzir margens</button>
+    
+    <h1>Etec Sales Gomes</h1>
+
+
+
+    <script>
+        let margin_size = '3'
+        let titulo = document.querySelector('h1')
+        let font_size = '12';
+         function aplicarRoxo() 
+        {
+            
+            titulo.style.color = 'purple';
+        }
+
+        function aplicarRed() 
+        {
+            
+            titulo.style.color = 'red';
+        }
+
+        function aplicarAzul() 
+        {
+            
+            titulo.style.color = 'blue';
+        }
+        function aumentarMargem() 
+        {   
+            titulo.style.margin = `${margin_size}px`
+            margin_size++;
+
+        }
+        function reduzirMargem()
+        { 
+            
+            titulo.style.margin = margin_size + 'px';
+          margin_size--; 
+        }
+    
+        
+        function aumentarFonte(){
+            font_size++;
+           aplicarSize()
+           
+            
+        }
+        function reduzirFonte(){
+            font_size--;
+           aplicarSize()
+            
+        }
+        
+        function aplicarSize () {
+            titulo.style.margin = `${font_size}px`
+        }
+        
+        
+        function dizerOla(){
+            alert('Olá!!!')
+        }
+
+
+        function aplicarEstilo(){
+            let titulo = document.querySelector('h1');
+            titulo.style.backgroundColor = 'gray';
+            titulo.style.fontSize = '64px';
+            titulo.style.fontFamily = 'comic sans ms';
+            titulo.style.marginTop = '100px';
+        }
+
+    document.body.style.backgroundColor = 'green';  
+
+
+
+    console.log(titulo);
+    </script>
+</body>
+</html>
