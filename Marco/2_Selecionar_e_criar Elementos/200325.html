@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecionar Elemento</title>
+</head>
+<body>
+    <button onclick="addColega1()">Adicionar Luiz</button>
+    <button onclick="addColega2()">Adicionar Ronaldo</button>
+    <button onclick="addColega3()">Adicionar Marta</button>
+    <button onclick="addColega4()">Adicionar Max</button>
+    <div id="turma"></div>
+
+    <script>
+        function addColega1() {
+                   let colega_1 = document.createElement('h1');
+        colega_1.innerText = 'Luiz';
+        colega_1.style.color = 'red';
+        colega_1.style.background = 'yellow';
+        colega_1.style.fontSize = '28px';
+        colega_1.style.fontFamily = 'Impact';
+        let imagem = document.createElement('img');
+        imagem.setAttribute('src', 'https://static.vecteezy.com/ti/fotos-gratis/t2/3752445-homem-negro-inclinado-no-corrimao-assistindo-o-celular-celular-virando-se-para-a-camera-sorrisos-foto.jpg')
+
+        document.querySelector('#turma').appendChild(colega_1);
+        document.querySelector('#turma').appendChild(imagem); 
+        }
+        function addColega2() {
+                   let colega_2 = document.createElement('h1');
+        colega_2.innerText = 'Ronaldo';
+        colega_2.style.color = 'Green';
+        colega_2.style.background = 'gray';
+        colega_2.style.fontSize = '28px';
+        colega_2.style.fontFamily = 'Impact';
+        let imagem = document.createElement('img');
+        imagem.setAttribute('src', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_za2qUDPatc8Xd3Jy3Dft0c1bUR32PGNRDQ&s')
+
+        document.querySelector('#turma').appendChild(colega_2);
+        document.querySelector('#turma').appendChild(imagem); 
+        }
+        function addColega3() {
+                   let colega_3 = document.createElement('h1');
+        colega_3.innerText = 'Marta';
+        colega_3.style.color = 'black';
+        colega_3.style.background = 'pink';
+        colega_3.style.fontSize = '28px';
+        colega_3.style.fontFamily = 'Impact';
+        let imagem = document.createElement('img');
+        imagem.setAttribute('src', 'https://cdn.pixabay.com/photo/2019/03/12/12/19/brazil-4050650_1280.jpg')
+
+        document.querySelector('#turma').appendChild(colega_3);
+        document.querySelector('#turma').appendChild(imagem);
+        }
+        function addColega4() {
+                   let colega_4 = document.createElement('h1');
+        colega_4.innerText = 'Max';
+        colega_4.style.color = 'white';
+        colega_4.style.background = 'blue';
+        colega_4.style.fontSize = '28px';
+        colega_4.style.fontFamily = 'Impact';
+        let imagem = document.createElement('img');
+        imagem.setAttribute('src', 'https://static.vecteezy.com/ti/fotos-gratis/t2/39904050-jovem-homem-olhando-dentro-frente-do-camera-dentro-a-cidade-foto.jpg')
+
+       document.querySelector('#turma').appendChild(colega_4);
+       document.querySelector('#turma').appendChild(imagem); 
+        }
+
+    </script>
+
+</body>
+</html>
