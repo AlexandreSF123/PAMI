@@ -1,0 +1,24 @@
+
+  <script>
+let texto = prompt('Digite uma string:') || '';
+let alvo = prompt('Digite um único caractere:') || '';
+alvo = alvo.charAt(0);
+if (!texto) {
+  console.log('String vazia ou cancelada.');
+} else if (!alvo) {
+  console.log('Nenhum caractere informado.');
+} else {
+
+  let contador = 0;
+  for (let i = 0; i < texto.length; i++) {
+    if (texto.charAt(i) === alvo) contador++;
+  }
+
+  console.log(
+    `O caractere '${alvo}' apareceu ${contador} vez${contador === 1 ? '' : 'es'} na string.`
+  );
+}
+
+  </script>
+
+

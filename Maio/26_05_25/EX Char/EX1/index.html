@@ -1,4 +1,16 @@
 <script>
-    let name = prompt("Digite o seu nome Completo:");
+    let nomeCompleto = prompt('Digite seu nome completo:') || '';
     
-</script>
+    
+    if (!nomeCompleto.trim()) {
+      console.warn('Nome vazio ou cancelado.');
+    } else {
+      let palavras = nomeCompleto.trim().split(/\s+/);
+      let iniciais = '';
+      
+      for (let i = 0; i < palavras.length; i++) {
+        iniciais += palavras[i].charAt(0).toUpperCase();
+      }
+      console.log(`Iniciais: ${iniciais}`);
+    }
+    </script>

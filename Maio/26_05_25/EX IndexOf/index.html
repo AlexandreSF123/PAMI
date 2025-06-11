@@ -1,0 +1,51 @@
+<script>
+
+let secreto = (prompt('Mestre, digite a palavra secreta:') || '')
+  .toLowerCase()
+  .trim();
+
+if (!secreto) {
+  console.error('Nenhuma palavra informada. Encerrando o jogo.');
+} else {
+  let semEspacos = secreto.replace(/\s+/g, '');
+  let unicos = [...new Set(semEspacos.split(''))];
+  let totalUnicos = unicos.length;
+  let erros = 0;
+  let tentativas = [];
+  let acertos = []; 
+  while (erros < 3 && acertos.length < totalUnicos) {
+    let verificar = prompt(
+      `Digite um caractere (erros: ${erros}/3)\nLetras já tentadas: ${tentativas.join(', ')}`
+    ) || '';
+    let chute = verificar.charAt(0).toLowerCase();
+    if (!chute) {
+      console.log('Você não digitou nada.');
+      continue;
+    }
+    if (tentativas.indexOf(chute) !== -1) {
+      console.log(`A letra '${chute}' já foi tentada.`);
+      continue;
+    }
+    tentativas.push(chute);
+
+    if (secreto.indexOf(chute) !== -1) {
+
+      if (acertos.indexOf(chute) === -1) {
+        acertos.push(chute);
+      }
+      console.log(`✔ Existe! Letras descobertas: ${acertos.join(', ')}`);
+    } else {
+      erros++;
+      console.log(`✖ Não existe! Restam ${3 - erros} tentativa(s).`);
+    }
+  }
+  if (acertos.length === totalUnicos) {
+    console.log('Parabéns! Você venceu o jogo da forca!');
+  } else {
+    console.log(
+ `💀 Você perdeu! As letras eram: ${unicos.join(', ')}`
+    );
+  }
+}
+
+</script>

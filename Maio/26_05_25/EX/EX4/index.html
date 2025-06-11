@@ -1,15 +1,45 @@
 
 <script>
+ 
+function validarNumeroTelefone(numero) {
+  // Remove espaços em branco
+  const numeroLimpo = numero.trim();
 
-    let number = 1599785845;
-    let number2 = number.toString();
-    number3 = number2.split('');
-    console.log(number3)
-     if (number3.length = 11) {
-       console.log("número inválido em quantidade de números");
-    } else {
-        console.log("número inválido");
-    } 
+  // Verifica se o número possui pelo menos 10 caracteres (exemplo: formato brasileiro)
+  if (numeroLimpo.length < 10) {
+    return "Número inválido: deve conter pelo menos 10 dígitos.";
+  }
+
+  // Verifica se contém apenas números (permitindo parênteses, traços e espaços opcionais)
+  const regex = /^[0-9()\-\s]+$/;
+  if (!regex.test(numeroLimpo)) {
+    return "Número inválido: deve conter apenas números e caracteres permitidos (parênteses, traços ou espaços).";
+  }
+
+  // Verifica se o número possui apenas dígitos após remover caracteres opcionais
+  const apenasNumeros = numeroLimpo.replace(/[\s\-\(\)]/g, "");
+  if (!/^\d+$/.test(apenasNumeros)) {
+    return "Número inválido: contém caracteres não numéricos.";
+  }
+
+  return "Número válido!";
+}
+
+// Exemplos de uso
+console.log(validarNumeroTelefone("(11) 98765-4321")); // Número válido!
+console.log(validarNumeroTelefone("12345")); // Número inválido: deve conter pelo menos 10 dígitos.
+console.log(validarNumeroTelefone("1882738455")); // Número inválido: contém caracteres não numéricos.
+console.log(validarNumeroTelefone("9876543210")); // Número válido!
+
+    //  let number = 1599785845;
+    // let number2 = number.toString();
+    // number3 = number2.split('');
+    // console.log(number3)
+    //  if (number3.length = 11) {
+    //    console.log("número inválido em quantidade de números");
+    // } else {
+    //     console.log("número inválido");
+    // } 
 
 
 </script>

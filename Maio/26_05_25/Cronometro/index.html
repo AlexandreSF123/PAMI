@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronômetro Simples</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #timer {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        #menssagem {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.5em;
+            color: red;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        button {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1em;
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="temporizador">00:00:00</div>
+    <button onclick="comeca()">Começar</button>
+    <div id="menssagem"></div>
+ <button onclick="para()">Parar</button>
+    <script>
+        let seconds = 0, minutes = 0, hours = 0;
+        let timer;
+        let running = false;
+
+        function updateDisplay() {
+            let formattedTime = 
+                (hours < 10 ? "0" + hours : hours) + ":" +
+                (minutes < 10 ? "0" + minutes : minutes) + ":" +
+                (seconds < 10 ? "0" + seconds : seconds);
+            document.getElementById("temporizador").innerText = formattedTime;
+        }
+
+        function comeca() {
+            if (!running) {
+                running = true;
+                timer = setInterval(() => {
+                    seconds++;
+                    if (seconds === 60) {
+                        seconds = 0;
+                        minutes++;
+                        if (minutes === 60) {
+                            minutes = 0;
+                            hours++;
+                        }
+                    }
+                    updateDisplay();
+                }, 1000);
+            }
+        }
+                function para() {
+                    running = false;
+                    clearInterval(timer);
+                    clearInterval(messageTimer);
+                }
+
+    </script>
+
+</body>
+</html>
